@@ -568,7 +568,7 @@ class XmlWriter():
             if is_coverpoint and not is_cross:
                 if hasattr(opts_item, 'getAutoBinMax'):
                     auto_bin_max = opts_item.getAutoBinMax()
-                    if auto_bin_max <= 0:
+                    if auto_bin_max < 0:
                         auto_bin_max = 64  # UCIS default
                     self.setAttr(optionsElem, "auto_bin_max", str(auto_bin_max))
                 if hasattr(opts_item, 'getDetectOverlap'):
